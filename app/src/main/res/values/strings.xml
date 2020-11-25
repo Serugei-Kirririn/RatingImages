@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">RatingImages</string>
+    <string name="action_setting">Setting</string>
+    <string name="edit_message" >Enter your text here</string>
+    <string name="button_send">GO!</string>
+</resources>
