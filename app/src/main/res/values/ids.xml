@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="editTextTextPersonName" type="id" />
+    <item name="ValueL" type="id" />
+    <item name="ValueD" type="id" />
+    <item name="YourChoose" type="id" />
+    <item name="Sum" type="id" />
+</resources>

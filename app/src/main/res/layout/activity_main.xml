@@ -1,100 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity"
-    android:background="#000000" >
+    tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linear1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="409dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="600dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/edit_message"
-        android:layout_width="457dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:hint="@string/edit_message"
-        android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <requestFocus />
-    </EditText>
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/enter_name"
+            android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_send"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onButton"
+            android:text="@string/button" />
+
+    </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/imgview"
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="506dp"
-        android:layout_above="@+id/relative2"
-        android:layout_below="@id/linear1"
-        android:layout_marginTop="69dp">
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/argentina" />
+
+        <TextView
+            android:id="@+id/Sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </FrameLayout>
 
-    <RelativeLayout
-        android:id="@+id/relative2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imgview"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/imgview"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="460dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        android:layout_marginRight="0dp">
+        <ImageView
+            android:id="@+id/dislike"
+            android:layout_width="130dp"
+            android:layout_height="124dp"
+            android:onClick="onDislike"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/like"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/_20" />
 
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="173dp"
-            android:layout_height="183dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="156dp"
+            android:layout_height="132dp"
+            android:onClick="onLike"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dislike"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/scale_1200" />
 
-            android:rotationX="180"
-            android:src="@drawable/_20" />
+        <TextView
+            android:id="@+id/ValueD"
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:textColor="#E80606"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <ImageButton
-            android:id="@+id/imageButton1"
-            android:layout_width="173dp"
-            android:layout_height="183dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+        <TextView
+            android:id="@+id/ValueL"
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="#0CF815"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            android:src="@drawable/_20" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/YourChoose"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="141dp"
+            android:textColor="#00B0FF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/Disliked"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="229dp"
+            android:text="@string/dis"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/Liked"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="434dp"
+            android:text="@string/like"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

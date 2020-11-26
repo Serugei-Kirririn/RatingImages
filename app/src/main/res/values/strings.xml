@@ -3,4 +3,11 @@
     <string name="action_setting">Setting</string>
     <string name="edit_message" >Enter your text here</string>
     <string name="button_send">GO!</string>
+    <string name="chooseD" />
+    <string name="error" />
+    <string name="chooseL" />
+    <string name="dis" />
+    <string name="like" />
+    <string name="enter_name" />
+    <string name="button" />
 </resources>
